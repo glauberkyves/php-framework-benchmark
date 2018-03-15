@@ -13,11 +13,21 @@ benchmark ()
     # get time
     count=10
     total=0
-    for ((i=0; i < $count; i++)); do
+#    for ((i=0; i < $count; i++)); do
+#        curl "$url" > "$output"
+#        t=`tail -1 "$output" | cut -f 2 -d ':'`
+#        total=`php ./benchmarks/sum_ms.php $t $total`
+#    done
+
+
+    i=0
+    while [ "$i" -le $count ]; do
         curl "$url" > "$output"
         t=`tail -1 "$output" | cut -f 2 -d ':'`
         total=`php ./benchmarks/sum_ms.php $t $total`
+        i=$(( i + 1 ))
     done
+
     time=`php ./benchmarks/avg_ms.php $total $count`
 
     # get memory and file
