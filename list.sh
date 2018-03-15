@@ -21,14 +21,15 @@ list="
 #laravel-5.1
 #laravel-5.2
 #laravel-5.3
-laravel-5.6
+#laravel-5.6
 #lumen-5.0
 #lumen-5.1
 lumen-5.6
 #no-framework
 #nofuss-1.2
 #phalcon-1.3
-#phalcon-2.0
+phalcon-2.0
+slim
 #phpixie-3.2
 #radar-1.0-dev  # does not work
 #siler-0.6

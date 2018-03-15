@@ -6,8 +6,11 @@ benchmark ()
     output="output/$fw.output"
 
     # get rpm
-    echo "ab -c 10 -t 3 $url"
-    ab -c 10 -t 3 "$url" > "$ab_log"
+#    echo "ab -c 10 -t 3 $url"
+    echo "ab -n 10000 -c 50 -t 3 $url"
+#    ab -c 10 -t 3 "$url" > "$ab_log"
+    ab -n 10000 -kc 1000 -t 30 "$url" > "$ab_log"
+    ab -n 10000 -c 1000 -t 30 "$url" > "$ab_log"
     rps=`grep "Requests per second:" "$ab_log" | cut -f 7 -d " "`
 
     # get time
